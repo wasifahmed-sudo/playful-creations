@@ -1,3 +1,7 @@
+import Header from "../components/Header";
+import SkillBar from "../components/SkillBar";
+import Experience from "../components/Experience";
+
 const Index = () => {
   return (
     <div className="min-h-screen py-4 px-4 max-w-6xl mx-auto">
