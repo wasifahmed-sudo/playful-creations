@@ -16,13 +16,13 @@ const Index = () => {
               <SkillBar name="Cloud Platforms" level="Expert" />
               <SkillBar name="Containerization" level="Expert" />
               <SkillBar name="Monitoring & Observability" level="Expert" />
-              <SkillBar name="Scripting & Automation" level="Advanced" />
-              <SkillBar name="Data Orchestration" level="Advanced" />
+              <SkillBar name="Scripting & Automation" level="Proficient" />
+              <SkillBar name="Data Orchestration" level="Proficient" />
               <SkillBar name="Virtualization" level="Expert" />
-              <SkillBar name="Networking" level="Advanced" />
-              <SkillBar name="DevOps Security" level="Advanced" />
+              <SkillBar name="Networking" level="Proficient" />
+              <SkillBar name="DevOps Security" level="Proficient" />
               <SkillBar name="Databases" level="Advanced" />
-              <SkillBar name="Machine Learning Ops" level="Intermediate" />
+              <SkillBar name="Machine Learning Ops" level="Familiar" />
             </div>
           </section>
         </div>
@@ -33,20 +33,19 @@ const Index = () => {
             <Experience
               title="DevOps Consultant"
               company="Bytestack"
-              period="Feb 2022 - Present"
-              description="Leading DevOps initiatives and infrastructure optimization for enterprise clients"
+              period="Feb 2023 - Present"
+              description="Driving DevOps strategies and infrastructure excellence for large-scale enterprise projects"
               bullets={[
-                "Orchestrated high availability environments on AWS EC2 with 99.99% uptime",
-                "Implemented Kubernetes Network Policies for enhanced security",
-                "Led EKS Anywhere cluster deployment on Nutanix with 25% efficiency improvement",
-                "Automated operational tasks saving substantial time and costs"
+                "Orchestrated resilient AWS and Kubernetes architectures",
+                "Streamlined workflows with advanced automation and IaC practices",
+                "Enhanced security protocols and operational efficiency"
               ]}
             />
             <Experience
               title="DevOps Engineer"
               company="Cerebrone.ai"
-              period="Jan 2023 - Nov 2023"
-              description="Spearheaded cloud infrastructure and DevOps practices"
+              period="Feb 2022 - Feb 2023"
+              description="Driving DevOps strategies and infrastructure excellence for large-scale enterprise projects"
               bullets={[
                 "Designed scalable Terraform modules improving efficiency by 15%",
                 "Led migration from GCP to AWS optimizing system performance",
@@ -57,7 +56,7 @@ const Index = () => {
             <Experience
               title="Junior DevOps Engineer"
               company="E-Spirit"
-              period="Aug 2020 - Feb 2022"
+              period="Aug 2020 - Jan 2022"
               description="Implemented Infrastructure as Code and automation solutions"
               bullets={[
                 "Spearheaded IaC implementation using ARM templates",
