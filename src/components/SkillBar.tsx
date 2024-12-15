@@ -18,13 +18,13 @@ const SkillBar = ({ name, level }: SkillBarProps) => {
   };
 
   return (
-    <div className="mb-2">
-      <div className="flex justify-between mb-0.5 text-sm">
+    <div className="mb-1">
+      <div className="flex justify-between mb-0.5 text-xs">
         <span>{name}</span>
         <span className="text-accent">{level}</span>
       </div>
-      <div className="w-full bg-card rounded-full h-1.5">
-        <div className={`skill-bar h-1.5 ${getWidth()}`} />
+      <div className="w-full bg-card rounded-full h-1">
+        <div className={`skill-bar h-1 ${getWidth()}`} />
       </div>
     </div>
   );
