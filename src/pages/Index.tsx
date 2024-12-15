@@ -4,12 +4,12 @@ import Experience from "../components/Experience";
 
 const Index = () => {
   return (
-    <div className="min-h-screen py-12 px-4 max-w-4xl mx-auto">
-      <div className="grid md:grid-cols-[1fr,2fr] gap-12 mb-12">
+    <div className="h-screen py-8 px-4 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-[1fr,2fr] gap-8 mb-8">
         <Header />
         
         <section>
-          <h2 className="text-2xl font-semibold text-white mb-6">Professional Experience</h2>
+          <h2 className="text-xl font-semibold text-white mb-4">Professional Experience</h2>
           <Experience
             title="DevOps Consultant"
             company="Bytestack"
@@ -50,16 +50,20 @@ const Index = () => {
       </div>
       
       <section>
-        <h2 className="text-2xl font-semibold text-white mb-6">Technical Expertise</h2>
-        <div className="space-y-4">
+        <h2 className="text-xl font-semibold text-white mb-4">Technical Expertise</h2>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
           <SkillBar name="Infrastructure as Code" level="Expert" />
-          <SkillBar name="CI/CD Pipeline Implementation" level="Expert" />
-          <SkillBar name="Containerization & Orchestration" level="Expert" />
+          <SkillBar name="CI/CD" level="Expert" />
           <SkillBar name="Cloud Platforms" level="Expert" />
-          <SkillBar name="Monitoring & Visualization" level="Advanced" />
-          <SkillBar name="Source Code Management" level="Advanced" />
+          <SkillBar name="Containerization" level="Expert" />
+          <SkillBar name="Monitoring & Observability" level="Expert" />
+          <SkillBar name="Scripting & Automation" level="Advanced" />
           <SkillBar name="Data Orchestration" level="Advanced" />
-          <SkillBar name="Virtualization" level="Advanced" />
+          <SkillBar name="Virtualization" level="Expert" />
+          <SkillBar name="Networking" level="Advanced" />
+          <SkillBar name="DevOps Security" level="Advanced" />
+          <SkillBar name="Databases" level="Advanced" />
+          <SkillBar name="Machine Learning Ops" level="Intermediate" />
         </div>
       </section>
     </div>

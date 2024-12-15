@@ -8,15 +8,15 @@ interface ExperienceProps {
 
 const Experience = ({ title, company, period, description, bullets }: ExperienceProps) => {
   return (
-    <div className="mb-8">
-      <h3 className="text-xl font-semibold text-white mb-1">{title}</h3>
-      <div className="text-accent mb-2">
+    <div className="mb-4">
+      <h3 className="text-base font-semibold text-white mb-0.5">{title}</h3>
+      <div className="text-sm text-accent mb-1">
         {company} | {period}
       </div>
-      <p className="mb-2">{description}</p>
-      <ul className="list-disc list-inside space-y-1">
+      <p className="text-sm mb-1">{description}</p>
+      <ul className="list-disc list-inside space-y-0.5">
         {bullets.map((bullet, index) => (
-          <li key={index}>{bullet}</li>
+          <li key={index} className="text-sm">{bullet}</li>
         ))}
       </ul>
     </div>
