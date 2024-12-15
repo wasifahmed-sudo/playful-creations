@@ -3,8 +3,8 @@ import { Mail, Github, Twitter, MapPin } from "lucide-react";
 const Header = () => {
   return (
     <header className="mb-12">
-      <h1 className="text-4xl font-bold text-white mb-2">Aubrey Clark</h1>
-      <h2 className="text-xl mb-4 text-accent">JVM Hacker & Systems Engineer</h2>
+      <h1 className="text-4xl font-bold text-white mb-2">Syed Wasif Ahmed</h1>
+      <h2 className="text-xl mb-4 text-accent">DevOps Engineer</h2>
       
       <div className="space-y-2 text-sm">
         <div className="flex items-center gap-2">
