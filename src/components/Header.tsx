@@ -14,7 +14,7 @@ const Header = () => {
         <div className="flex items-center gap-1.5">
           <Mail size={12} className="text-accent" />
           <a href="mailto:syedwasifahmed@protonmail.com" className="hover:text-white transition-colors">
-            cat@aubrey.rs
+            syedwasifahmed@protonmail.com
           </a>
         </div>
         <div className="flex items-center gap-1.5">
