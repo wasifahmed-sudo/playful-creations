@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex items-center gap-1.5">
           <Github size={12} className="text-accent" />
           <a href="https://github.com/wasifahmed-sudo" className="hover:text-white transition-colors">
-            github.com/aubreyrs
+            github.com/wasifahmed-sudo
           </a>
         </div>
 {/*         <div className="flex items-center gap-1.5">
