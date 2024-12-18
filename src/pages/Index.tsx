@@ -19,9 +19,9 @@ const Index = () => {
               <SkillBar name="Scripting & Automation" level="Proficient" />
               <SkillBar name="Data Orchestration" level="Proficient" />
               <SkillBar name="Virtualization" level="Expert" />
-              <SkillBar name="Networking" level="Proficient" />
+              <SkillBar name="Networking" level="Advanced" />
               <SkillBar name="DevOps Security" level="Proficient" />
-              <SkillBar name="Databases" level="Advanced" />
+              <SkillBar name="Databases" level="Proficient" />
               <SkillBar name="Machine Learning Ops" level="Familiar" />
             </div>
           </section>

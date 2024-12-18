@@ -1,6 +1,6 @@
 interface SkillBarProps {
   name: string;
-  level: "Expert" | "Advanced" | "Intermediate";
+  level: "Expert" | "Advanced" | "Intermediate" | "Proficient" | "Familiar";
 }
 
 const SkillBar = ({ name, level }: SkillBarProps) => {
@@ -10,8 +10,12 @@ const SkillBar = ({ name, level }: SkillBarProps) => {
         return "w-full";
       case "Advanced":
         return "w-4/5";
-      case "Intermediate":
+      case "Proficient":
         return "w-3/5";
+      case "Intermediate":
+        return "w-2/5";
+      case "Familiar":
+        return "w-1/5";
       default:
         return "w-2/5";
     }
