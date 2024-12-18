@@ -31,7 +31,7 @@ const Index = () => {
           <h2 className="text-lg font-semibold text-white mb-3">Professional Experience</h2>
           <div className="space-y-4">
             <Experience
-              title="DevOps Consultant"
+              title="DevOps Engineer"
               company="Bytestack"
               period="Feb 2023 - Present"
               description="Driving DevOps strategies and infrastructure excellence for large-scale enterprise projects"
