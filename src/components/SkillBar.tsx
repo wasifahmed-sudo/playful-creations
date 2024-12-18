@@ -23,7 +23,7 @@ const SkillBar = ({ name, level }: SkillBarProps) => {
 
   return (
     <div className="mb-1">
-      <div className="flex justify-between mb-0.5 text-xs">
+      <div className="flex justify-between mb-0.5 text-sm">
         <span>{name}</span>
         <span className="text-accent">{level}</span>
       </div>

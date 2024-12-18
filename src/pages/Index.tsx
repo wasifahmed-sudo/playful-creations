@@ -9,7 +9,7 @@ const Index = () => {
         <div className="space-y-6">
           <Header />
           <section>
-            <h2 className="text-lg font-semibold text-white mb-3">Technical Expertise</h2>
+            <h2 className="text-xl font-semibold text-white mb-3">Technical Expertise</h2>
             <div className="grid grid-cols-1 gap-y-1.5">
               <SkillBar name="Infrastructure as Code" level="Expert" />
               <SkillBar name="CI/CD" level="Expert" />
@@ -28,7 +28,7 @@ const Index = () => {
         </div>
         
         <section>
-          <h2 className="text-lg font-semibold text-white mb-3">Professional Experience</h2>
+          <h2 className="text-xl font-semibold text-white mb-3">Professional Experience</h2>
           <div className="space-y-4">
             <Experience
               title="DevOps Engineer"
