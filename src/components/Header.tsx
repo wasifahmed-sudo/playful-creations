@@ -9,26 +9,26 @@ const Header = () => {
       <div className="space-y-1 text-xs">
         <div className="flex items-center gap-1.5">
           <MapPin size={12} className="text-accent" />
-          <span>Manchester, GB</span>
+          <span>Hyderabad, India</span>
         </div>
         <div className="flex items-center gap-1.5">
           <Mail size={12} className="text-accent" />
-          <a href="mailto:cat@aubrey.rs" className="hover:text-white transition-colors">
+          <a href="mailto:syedwasifahmed@protonmail.com" className="hover:text-white transition-colors">
             cat@aubrey.rs
           </a>
         </div>
         <div className="flex items-center gap-1.5">
           <Github size={12} className="text-accent" />
-          <a href="https://github.com/aubreyrs" className="hover:text-white transition-colors">
+          <a href="https://github.com/wasifahmed-sudo" className="hover:text-white transition-colors">
             github.com/aubreyrs
           </a>
         </div>
-        <div className="flex items-center gap-1.5">
+{/*         <div className="flex items-center gap-1.5">
           <Twitter size={12} className="text-accent" />
           <a href="https://twitter.com/aubyrs" className="hover:text-white transition-colors">
             twitter.com/aubyrs
           </a>
-        </div>
+        </div> */}
       </div>
     </header>
   );
