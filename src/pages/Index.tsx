@@ -1,7 +1,6 @@
 import Header from "../components/Header";
 import SkillBar from "../components/SkillBar";
 import Experience from "../components/Experience";
-import { Code, Database, Server, Cloud, Terminal, Github } from "lucide-react";
 
 const Index = () => {
   return (
@@ -24,36 +23,6 @@ const Index = () => {
               <SkillBar name="DevOps Security" level="Proficient" />
               <SkillBar name="Databases" level="Proficient" />
               <SkillBar name="Machine Learning Ops" level="Familiar" />
-            </div>
-          </section>
-
-          <section>
-            <h2 className="text-lg font-semibold text-white mb-3">Tech Stack</h2>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="flex items-center gap-2 bg-card p-2 rounded-lg">
-                <Code className="w-4 h-4 text-accent" />
-                <span className="text-xs">Python</span>
-              </div>
-              <div className="flex items-center gap-2 bg-card p-2 rounded-lg">
-                <Terminal className="w-4 h-4 text-accent" />
-                <span className="text-xs">Bash/Shell</span>
-              </div>
-              <div className="flex items-center gap-2 bg-card p-2 rounded-lg">
-                <Cloud className="w-4 h-4 text-accent" />
-                <span className="text-xs">AWS</span>
-              </div>
-              <div className="flex items-center gap-2 bg-card p-2 rounded-lg">
-                <Server className="w-4 h-4 text-accent" />
-                <span className="text-xs">Kubernetes</span>
-              </div>
-              <div className="flex items-center gap-2 bg-card p-2 rounded-lg">
-                <Database className="w-4 h-4 text-accent" />
-                <span className="text-xs">PostgreSQL</span>
-              </div>
-              <div className="flex items-center gap-2 bg-card p-2 rounded-lg">
-                <Github className="w-4 h-4 text-accent" />
-                <span className="text-xs">GitHub Actions</span>
-              </div>
             </div>
           </section>
         </div>
