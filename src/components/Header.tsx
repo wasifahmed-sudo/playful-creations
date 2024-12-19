@@ -1,6 +1,18 @@
-import { Mail, Github, Twitter, MapPin } from "lucide-react";
+import { Mail, Github, MapPin } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 const Header = () => {
+  const { toast } = useToast();
+
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("syedwasifahmed@protonmail.com");
+    toast({
+      description: "Email address copied to clipboard",
+      duration: 2000,
+    });
+  };
+
   return (
     <header className="mb-6">
       <h1 className="text-2xl font-bold text-white mb-1">Syed Wasif Ahmed</h1>
@@ -13,7 +25,11 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-1.5">
           <Mail size={14} className="text-accent" />
-          <a href="mailto:syedwasifahmed@protonmail.com" className="hover:text-white transition-colors">
+          <a 
+            href="#" 
+            onClick={handleEmailClick}
+            className="hover:text-white transition-colors cursor-pointer"
+          >
             syedwasifahmed@protonmail.com
           </a>
         </div>
