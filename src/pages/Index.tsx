@@ -34,35 +34,36 @@ const Index = () => {
               title="DevOps Engineer"
               company="Bytestack"
               period="Feb 2023 - Present"
-              description="Driving DevOps strategies and infrastructure excellence for large-scale enterprise projects"
+              description="Streamlining operations and delivering reliable cloud solutions"
               bullets={[
-                "Orchestrated resilient AWS and Kubernetes architectures",
-                "Streamlined workflows with advanced automation and IaC practices",
-                "Enhanced security protocols and operational efficiency"
+                "Managed and maintained cloud infrastructure to ensure smooth operations and uptime.",
+                "Automated deployment processes, streamlining workflows and reducing manual effort.",
+                "Enhanced security protocols and operational efficiency",
+                "Collaborated closely with teams to deliver tailored infrastructure solutions."
               ]}
             />
             <Experience
               title="DevOps Engineer"
               company="Cerebrone.ai"
               period="Feb 2022 - Feb 2023"
-              description="Driving DevOps strategies and infrastructure excellence for large-scale enterprise projects"
+              description="Scaling cloud environments and improving development workflows"
               bullets={[
-                "Designed scalable Terraform modules improving efficiency by 15%",
-                "Led migration from GCP to AWS optimizing system performance",
-                "Engineered custom GitHub runners enhancing automation capabilities",
-                "Implemented OIDC protocols for enhanced pod security"
+                "Designed and deployed scalable cloud environments with Terraform and CI/CD pipelines.",
+                "Migrated applications between cloud platforms to improve scalability and performance.",
+                "Built custom automation scripts to optimize workflows and simplify operations.",
+                "Strengthened cloud security with modern authentication and monitoring solutions."
               ]}
             />
             <Experience
               title="Junior DevOps Engineer"
               company="E-Spirit"
               period="Aug 2020 - Jan 2022"
-              description="Implemented Infrastructure as Code and automation solutions"
+              description="Automating processes and supporting development pipelines"
               bullets={[
-                "Spearheaded IaC implementation using ARM templates",
-                "Managed VM migrations optimizing resource allocation",
-                "Automated tasks with Bash/Shell scripts improving productivity by 30%",
-                "Configured Jenkins CI pipelines with Ant and Maven integration"
+                "Contributed to building and maintaining infrastructure using modern IaC tools.",
+                "Automated repetitive tasks, improving team productivity and reducing manual errors.",
+                "Supported CI/CD pipelines to ensure smooth and efficient deployments.",
+                "Gained experience managing and optimizing virtualized and cloud environments."
               ]}
             />
           </div>
