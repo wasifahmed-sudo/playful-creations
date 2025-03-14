@@ -1,3 +1,4 @@
+
 import Header from "../components/Header";
 import SkillBar from "../components/SkillBar";
 import Experience from "../components/Experience";
@@ -22,6 +23,7 @@ const Index = () => {
               <SkillBar name="Networking" level="Advanced" />
               <SkillBar name="DevOps Security" level="Proficient" />
               <SkillBar name="Databases" level="Proficient" />
+              <SkillBar name="Blockchain, Cryptocurrency & Web3" level="Proficient" />
               <SkillBar name="Machine Learning Ops" level="Familiar" />
             </div>
           </section>
