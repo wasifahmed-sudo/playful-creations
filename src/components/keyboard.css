@@ -1,0 +1,133 @@
+
+/* Keyboard Container */
+.keyboard-container {
+  width: 280px;
+  padding: 5px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
+              0 6px 6px rgba(0, 0, 0, 0.3),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Keyboard Grid Layout */
+.keyboard-grid {
+  display: grid;
+  grid-template-areas:
+    "coffee      .      ."
+    ".          orange  orange"
+    "key-x      github  hand"
+    "mail       hand    hand";
+  grid-template-columns: 60px 60px 135px;
+  grid-template-rows: auto 60px 60px 60px;
+  gap: 8px;
+}
+
+/* Individual Keys */
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9e6e0;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  height: 60px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #bebebe,
+              inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.07s, box-shadow 0.07s;
+  user-select: none;
+}
+
+.key:active, .key.active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #bebebe,
+              inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Coffee Key */
+.coffee-key {
+  grid-area: coffee;
+  background-color: #333;
+  color: white;
+  box-shadow: 0 4px 0 #222,
+              inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.coffee-key:active {
+  box-shadow: 0 1px 0 #222,
+              inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Orange Key */
+.orange-key {
+  grid-area: orange;
+  background-color: #ff7b52;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 4px 0 #d45e3b,
+              inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.orange-key:active {
+  box-shadow: 0 1px 0 #d45e3b,
+              inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Spacebar */
+.spacebar {
+  grid-area: hand;
+}
+
+/* 3D Mode Styles for the whole page */
+.mode-3d {
+  --perspective: 1500px;
+  --rotation-x: 15deg;
+  --rotation-y: 15deg;
+}
+
+.mode-3d body {
+  perspective: var(--perspective);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mode-3d #root > div {
+  transform: rotateX(var(--rotation-x)) rotateY(var(--rotation-y));
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.mode-3d section,
+.mode-3d .keyboard-container,
+.mode-3d header {
+  transform: translateZ(20px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mode-3d h1, 
+.mode-3d h2 {
+  transform: translateZ(40px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mode-3d .key {
+  transform: translateZ(10px);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mode-3d .key:hover {
+  transform: translateZ(25px) scale(1.1);
+}
+
+.mode-3d .key:active {
+  transform: translateZ(15px) scale(0.95);
+}

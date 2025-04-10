@@ -1,0 +1,80 @@
+
+/* Additional 3D effects that get applied when in 3D mode */
+.mode-3d {
+  --glow-size: 20px;
+  --glow-color: rgba(255, 123, 82, 0.4);
+}
+
+.mode-3d #root > div {
+  background: linear-gradient(135deg, #1e1e2f 0%, #2a2a45 100%);
+  animation: bg-pulse 8s infinite alternate;
+}
+
+.mode-3d h1 {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  letter-spacing: 1px;
+}
+
+.mode-3d section {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  background: rgba(30, 30, 47, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mode-3d .skill-bar {
+  box-shadow: 0 0 var(--glow-size) var(--glow-color);
+  animation: glow-pulse 3s infinite alternate;
+}
+
+@keyframes bg-pulse {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 var(--glow-size) var(--glow-color);
+  }
+  100% {
+    box-shadow: 0 0 calc(var(--glow-size) * 2) var(--glow-color);
+  }
+}
+
+.mode-3d .key {
+  animation: float 3s infinite alternate ease-in-out;
+}
+
+.mode-3d .key:nth-child(2n) {
+  animation-delay: 0.5s;
+}
+
+.mode-3d .key:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateZ(10px);
+  }
+  100% {
+    transform: translateZ(20px);
+  }
+}
+
+/* Enhanced effects for the coffee and orange keys in 3D mode */
+.mode-3d .coffee-key {
+  box-shadow: 0 0 20px rgba(51, 51, 51, 0.7),
+              0 0 40px rgba(51, 51, 51, 0.3);
+}
+
+.mode-3d .orange-key {
+  box-shadow: 0 0 20px rgba(255, 123, 82, 0.7),
+              0 0 40px rgba(255, 123, 82, 0.3);
+}

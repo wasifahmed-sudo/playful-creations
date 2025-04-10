@@ -1,26 +1,16 @@
-
 import Header from "../components/Header";
 import SkillBar from "../components/SkillBar";
 import Experience from "../components/Experience";
-import React from 'react';
+import React, { useState } from 'react';
+import Keyboard from "../components/Keyboard";
 
 const Index = () => {
-  const toggleTheme = () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-  }
-
-  const handleKeyPress = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.classList.add('active')
-    setTimeout(()=>e.currentTarget.classList.remove('active'),100)
-  }
-
   return (
     <div className="min-h-screen py-4 px-4 max-w-6xl mx-auto">
       <div className="grid md:grid-cols-[1fr,2fr] gap-4">
         <div className="space-y-6">
           <Header />
+          <Keyboard />
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">Technical Expertise</h2>
             <div className="grid grid-cols-1 gap-y-1.5">
@@ -83,23 +73,6 @@ const Index = () => {
           </div>
         </section>
       </div>
-
-      {/* Keyboard Section */}
-      <div className="keyboard mt-8">
-        <button className="key coffee" onClick={handleKeyPress}>☕</button>
-        <button className="key orange" onClick={() => {
-          toggleTheme()
-          handleKeyPress(event as any)
-        }}>
-        </button>
-        <button className="key" onClick={handleKeyPress}>X</button>
-        <button className="key" onClick={handleKeyPress}>Y</button>
-        <button className="key" onClick={handleKeyPress}>Z</button>
-        <button className="key" onClick={handleKeyPress}>A</button>
-      </div>
-      {/* End Keyboard Section */}
-
-
     </div>
   );
 };
