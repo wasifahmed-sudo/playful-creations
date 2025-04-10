@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated, to } from 'react-spring';
 
 const thoughts = [
   "Should I use Redux or Context API? 🤔",
@@ -100,7 +100,8 @@ const Bubble: React.FC<BubbleProps> = ({ thought, index }) => {
       className="absolute pointer-events-none"
       style={{
         opacity: props.opacity,
-        transform: props.to(
+        transform: to(
+          [props.scale, props.x, props.y, props.rotation],
           (scale, x, y, rotation) => 
           `translate3d(${x}vw, ${y}vh, 0) 
            scale(${scale}) 
