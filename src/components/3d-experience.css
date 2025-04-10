@@ -8,6 +8,7 @@
 .mode-3d #root > div {
   background: linear-gradient(135deg, #1e1e2f 0%, #2a2a45 100%);
   animation: bg-pulse 8s infinite alternate;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
 }
 
 .mode-3d h1 {
@@ -22,6 +23,7 @@
   background: rgba(30, 30, 47, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateZ(30px);
 }
 
 .mode-3d .skill-bar {
@@ -49,6 +51,7 @@
 
 .mode-3d .key {
   animation: float 3s infinite alternate ease-in-out;
+  transform: translateZ(15px);
 }
 
 .mode-3d .key:nth-child(2n) {
@@ -61,20 +64,73 @@
 
 @keyframes float {
   0% {
-    transform: translateZ(10px);
+    transform: translateZ(15px);
   }
   100% {
-    transform: translateZ(20px);
+    transform: translateZ(25px);
   }
 }
 
-/* Enhanced effects for the coffee and orange keys in 3D mode */
+/* Enhanced effects for mechanical keyboard in 3D mode */
+.mode-3d .mechanical-keyboard {
+  background-color: #1a1a1a;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 10px 20px rgba(0, 0, 0, 0.4),
+    0 5px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(60, 60, 60, 0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 .mode-3d .coffee-key {
-  box-shadow: 0 0 20px rgba(51, 51, 51, 0.7),
-              0 0 40px rgba(51, 51, 51, 0.3);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(0,0,0,0.4),
+    0 5px 15px rgba(0, 0, 0, 0.7),
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 .mode-3d .orange-key {
-  box-shadow: 0 0 20px rgba(255, 123, 82, 0.7),
-              0 0 40px rgba(255, 123, 82, 0.3);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -1px 0 rgba(0,0,0,0.2),
+    0 5px 15px rgba(255, 123, 82, 0.7),
+    0 10px 20px rgba(255, 123, 82, 0.3),
+    0 0 40px rgba(255, 123, 82, 0.2);
+}
+
+/* 3D light effects */
+.mode-3d .mechanical-keyboard::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(255, 123, 82, 0.3) 0%, rgba(255, 123, 82, 0) 70%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Subtle hover effect in 3D mode */
+.mode-3d .key:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -1px 0 rgba(0,0,0,0.2),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 4px 0 #bebebe,
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Enhanced active state in 3D mode */
+.mode-3d .key:active {
+  transform: translateZ(5px) translateY(4px);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -1px 0 rgba(0,0,0,0.2),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 1px 0 #bebebe;
 }

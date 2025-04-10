@@ -76,13 +76,13 @@ const Keyboard = () => {
 
   return (
     <div className="keyboard-container mb-6 select-none">
-      <div className="keyboard-grid">
+      <div className="mechanical-keyboard">
+        {/* Coffee Key */}
         <TooltipProvider>
-          {/* Coffee Key */}
           <Tooltip>
             <TooltipTrigger asChild>
               <button onClick={handleKeyClick} className="key coffee-key">
-                <Coffee size={20} />
+                <Coffee size={18} />
               </button>
             </TooltipTrigger>
             <TooltipContent>
@@ -105,8 +105,8 @@ const Keyboard = () => {
           {/* X Key */}
           <Tooltip>
             <TooltipTrigger asChild>
-              <button onClick={handleKeyClick} className="key">
-                <X size={20} />
+              <button onClick={handleKeyClick} className="key key-x">
+                <X size={18} />
               </button>
             </TooltipTrigger>
             <TooltipContent>
@@ -117,8 +117,8 @@ const Keyboard = () => {
           {/* Github Key */}
           <Tooltip>
             <TooltipTrigger asChild>
-              <button onClick={handleGithubClick} className="key">
-                <Github size={20} />
+              <button onClick={handleGithubClick} className="key github-key">
+                <Github size={18} />
               </button>
             </TooltipTrigger>
             <TooltipContent>
@@ -130,23 +130,11 @@ const Keyboard = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <button onClick={handleKeyClick} className="key spacebar">
-                <Hand size={20} />
+                <Hand size={18} />
               </button>
             </TooltipTrigger>
             <TooltipContent>
               <p>Interact</p>
-            </TooltipContent>
-          </Tooltip>
-
-          {/* Email Key */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button onClick={handleEmailClick} className="key">
-                <Mail size={20} />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Copy Email</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
