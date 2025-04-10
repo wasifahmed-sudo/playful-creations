@@ -40,7 +40,7 @@ const Keyboard = () => {
       // Activate neural particles
       document.dispatchEvent(new CustomEvent('activate-neural-particles'));
       
-      toast("3D Brain Mode Activated", {
+      toast("Brain Mode Activated", {
         description: "Welcome to the visual cortex of a developer's mind",
         position: "top-center",
         duration: 4000,
@@ -52,7 +52,7 @@ const Keyboard = () => {
       // Deactivate neural particles
       document.dispatchEvent(new CustomEvent('deactivate-neural-particles'));
       
-      toast("2D Mode Restored", {
+      toast("Standard Mode Restored", {
         description: "Returning to normal perception",
         position: "top-center",
         duration: 2000,
@@ -96,11 +96,11 @@ const Keyboard = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <button onClick={handleToggle3D} className="key orange-key">
-                {is3DMode ? "2D" : "3D"}
+                <span className="key-icon">🧠</span>
               </button>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Toggle Developer Brain 3D Mode</p>
+              <p>Toggle Developer Brain Mode</p>
             </TooltipContent>
           </Tooltip>
 

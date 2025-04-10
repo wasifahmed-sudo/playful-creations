@@ -1,11 +1,11 @@
 
-/* Additional 3D effects that get applied when in 3D mode */
+/* Advanced 3D effects for Developer Brain Mode */
 .mode-3d {
   --glow-size: 20px;
-  --glow-color: rgba(255, 123, 82, 0.4);
-  --primary-shadow: rgba(255, 123, 82, 0.3);
-  --secondary-shadow: rgba(0, 0, 255, 0.2);
-  perspective: 1500px;
+  --glow-color: rgba(139, 92, 246, 0.4);
+  --primary-shadow: rgba(139, 92, 246, 0.3);
+  --secondary-shadow: rgba(255, 123, 82, 0.2);
+  perspective: 2000px;
 }
 
 .mode-3d #root {
@@ -13,61 +13,61 @@
   transform: 
     rotateX(var(--rotation-x, 0deg)) 
     rotateY(var(--rotation-y, 0deg));
-  transition: transform 0.2s ease-out;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .mode-3d #root > div {
   background: linear-gradient(135deg, #1e1e2f 0%, #2a2a45 100%);
   background-size: 200% 200%;
-  animation: bg-pulse 8s infinite alternate;
+  animation: bg-pulse 15s infinite alternate ease-in-out;
   box-shadow: 
     0 20px 80px rgba(0, 0, 0, 0.6),
     0 0 100px var(--primary-shadow),
     0 0 150px var(--secondary-shadow);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
 }
 
 .mode-3d h1 {
   text-shadow: 
     0 0 15px rgba(255, 255, 255, 0.8),
-    0 0 30px rgba(255, 123, 82, 0.4);
+    0 0 30px rgba(139, 92, 246, 0.6);
   letter-spacing: 1px;
   transform: translateZ(40px);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .mode-3d h2 {
   transform: translateZ(30px);
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .mode-3d section {
   transform-style: preserve-3d;
   box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.3),
-    0 0 50px rgba(0, 0, 0, 0.1);
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 0 50px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   padding: 20px;
-  background: rgba(30, 30, 47, 0.7);
+  background: rgba(30, 30, 47, 0.5);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.1);
   transform: translateZ(30px);
-  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease-out;
 }
 
 .mode-3d section:hover {
   box-shadow: 
-    0 15px 40px rgba(0, 0, 0, 0.4),
-    0 0 60px rgba(255, 123, 82, 0.2);
-  transform: translateZ(40px);
+    0 15px 40px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(139, 92, 246, 0.3);
+  transform: translateZ(45px) scale(1.02);
 }
 
 .mode-3d .skill-bar {
   box-shadow: 0 0 var(--glow-size) var(--glow-color);
-  animation: glow-pulse 3s infinite alternate;
+  animation: glow-pulse 3s infinite alternate ease-in-out;
   position: relative;
   overflow: hidden;
 }
@@ -81,11 +81,108 @@
   height: 100%;
   background: linear-gradient(90deg, 
     rgba(255, 255, 255, 0) 0%, 
-    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0.4) 50%, 
     rgba(255, 255, 255, 0) 100%);
   animation: shimmer 3s infinite;
 }
 
+/* Particle effects */
+.mode-3d::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(255, 123, 82, 0.1) 0%, transparent 20%);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* Experience card enhancements */
+.mode-3d .experience-card {
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(30, 30, 47, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.mode-3d .experience-card:hover {
+  transform: translateZ(20px) scale(1.03);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(139, 92, 246, 0.2);
+  background: rgba(35, 35, 55, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.mode-3d .experience-card h3 {
+  transform: translateZ(15px);
+  transition: transform 0.3s ease;
+}
+
+.mode-3d .experience-card p {
+  transform: translateZ(10px);
+  transition: transform 0.3s ease;
+}
+
+.mode-3d .experience-card ul li {
+  transform: translateZ(5px);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.mode-3d .experience-card ul li:hover {
+  transform: translateZ(15px);
+  color: #ffffff;
+}
+
+/* Glitch effect for headings on hover */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+
+.mode-3d h1:hover, .mode-3d h2:hover {
+  animation: glitch 500ms infinite;
+  cursor: default;
+}
+
+/* Skill text effect */
+.mode-3d .skill-name {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: translateZ(5px);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.mode-3d .skill-name:hover {
+  transform: translateZ(15px);
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+}
+
+/* Floating code animations */
 @keyframes shimmer {
   0% {
     left: -100%;
@@ -113,168 +210,102 @@
   }
 }
 
-.mode-3d .key {
-  animation: float 3s infinite alternate ease-in-out;
-  transform: translateZ(15px);
-}
-
-.mode-3d .key:nth-child(2n) {
-  animation-delay: 0.5s;
-}
-
-.mode-3d .key:nth-child(3n) {
-  animation-delay: 1s;
-}
-
-@keyframes float {
-  0% {
-    transform: translateZ(15px);
-  }
-  100% {
-    transform: translateZ(25px);
-  }
-}
-
-/* Enhanced particle effect */
-.mode-3d::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(255, 123, 82, 0.1) 0%, transparent 20%),
-    radial-gradient(circle at 80% 70%, rgba(100, 123, 255, 0.1) 0%, transparent 20%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Experience section enhancements */
-.mode-3d .experience-card {
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease;
-}
-
-.mode-3d .experience-card:hover {
-  transform: translateZ(10px) scale(1.02);
-}
-
-.mode-3d .experience-card h3 {
-  transform: translateZ(15px);
-}
-
-.mode-3d .experience-card p {
-  transform: translateZ(10px);
-}
-
-.mode-3d .experience-card ul li {
-  transform: translateZ(5px);
-  transition: transform 0.3s ease;
-}
-
-.mode-3d .experience-card ul li:hover {
-  transform: translateZ(15px);
-}
-
-/* Skill text effect */
-.mode-3d .skill-name {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  transform: translateZ(5px);
-}
-
-/* Floating code animations */
-@keyframes float-slow {
-  0% {
-    transform: translateZ(20px) translate(0, 0);
-  }
-  50% {
-    transform: translateZ(30px) translate(-10px, 15px);
-  }
-  100% {
-    transform: translateZ(20px) translate(0, 0);
-  }
-}
-
-@keyframes float-delayed {
-  0% {
-    transform: translateZ(25px) translate(0, 0);
-  }
-  50% {
-    transform: translateZ(35px) translate(15px, -10px);
-  }
-  100% {
-    transform: translateZ(25px) translate(0, 0);
-  }
-}
-
-@keyframes float-delayed-slow {
-  0% {
-    transform: translateZ(15px) translate(0, 0);
-  }
-  50% {
-    transform: translateZ(25px) translate(10px, 10px);
-  }
-  100% {
-    transform: translateZ(15px) translate(0, 0);
-  }
-}
-
-@keyframes float-reverse {
-  0% {
-    transform: translateZ(20px) translate(0, 0);
-  }
-  50% {
-    transform: translateZ(30px) translate(10px, -15px);
-  }
-  100% {
-    transform: translateZ(20px) translate(0, 0);
-  }
-}
-
-.animate-float {
-  animation: float-slow 10s infinite ease-in-out;
-}
-
-.animate-float-delayed {
-  animation: float-delayed 12s infinite ease-in-out;
-}
-
-.animate-float-slow {
-  animation: float-slow 15s infinite ease-in-out;
-}
-
-.animate-float-reverse {
-  animation: float-reverse 8s infinite ease-in-out;
-}
-
-.animate-float-delayed-slow {
-  animation: float-delayed-slow 18s infinite ease-in-out;
-}
-
 /* Glow effects */
 .shadow-glow {
   box-shadow: 
-    0 0 20px rgba(139, 92, 246, 0.2),
+    0 0 20px rgba(139, 92, 246, 0.3),
     0 0 40px rgba(139, 92, 246, 0.1);
 }
 
-.mode-3d .mechanical-keyboard {
-  transform: translateZ(50px) !important;
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.8),
-    0 10px 30px rgba(255, 123, 82, 0.2) !important;
+/* Advanced neon light effect for skills section */
+.mode-3d .skill-bar {
+  position: relative;
 }
 
-/* Matrix-like code rain effect */
-.mode-3d .code-rain {
-  position: fixed;
-  top: 0;
+.mode-3d .skill-bar:before {
+  content: '';
+  position: absolute;
+  top: -5px;
   left: 0;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
+  height: calc(100% + 10px);
+  background: var(--glow-color);
   z-index: -1;
-  opacity: 0.2;
-  mix-blend-mode: screen;
+  filter: blur(10px);
+  opacity: 0.7;
+}
+
+/* Syntax highlighting for code snippets */
+.syntax-highlighted {
+  color: #e1e1e6;
+}
+
+.syntax-highlighted .keyword {
+  color: #ff7b52;
+}
+
+.syntax-highlighted .string {
+  color: #9ece6a;
+}
+
+.syntax-highlighted .comment {
+  color: #565f89;
+  font-style: italic;
+}
+
+.syntax-highlighted .function {
+  color: #7aa2f7;
+}
+
+.syntax-highlighted .variable {
+  color: #bb9af7;
+}
+
+/* Responsive scaling for 3D effects */
+@media (max-width: 768px) {
+  .mode-3d {
+    perspective: 1200px;
+  }
+  
+  .mode-3d section,
+  .mode-3d .experience-card {
+    transform: translateZ(15px);
+  }
+  
+  .mode-3d section:hover,
+  .mode-3d .experience-card:hover {
+    transform: translateZ(25px) scale(1.01);
+  }
+}
+
+/* Neuron connection lines */
+.neuron-connection {
+  position: absolute;
+  pointer-events: none;
+  background: linear-gradient(90deg, 
+    rgba(139, 92, 246, 0.7) 0%, 
+    rgba(255, 123, 82, 0.7) 100%);
+  height: 1px;
+  transform-origin: left center;
+  opacity: 0.5;
+  filter: blur(1px);
+  z-index: 15;
+}
+
+/* Add depth to the page */
+.mode-3d:after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at top left, transparent 0%, rgba(0, 0, 0, 0.3) 90%),
+    radial-gradient(ellipse at bottom right, transparent 0%, rgba(0, 0, 0, 0.3) 90%);
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.4;
+}
+
+/* Advanced hover effects for elements */
+.mode-3d *:hover {
+  z-index: 5;
 }

@@ -16,14 +16,15 @@
     "mail   hand  hand";
   grid-template-columns: 60px 60px 60px;
   grid-gap: 8px;
-  background-color: #1a1a1a;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #151515;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 
-    0 8px 16px rgba(0, 0, 0, 0.6),
-    0 4px 8px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
+    0 8px 16px rgba(0, 0, 0, 0.8),
+    0 4px 8px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: perspective(500px) rotateX(10deg);
 }
 
 /* Base Key Style */
@@ -32,10 +33,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e8e8e8;
-  color: #333;
+  background: linear-gradient(145deg, #202020, #242424);
+  color: #aaa;
   border: none;
-  border-radius: 6px;
+  border-radius: 7px;
   font-size: 16px;
   font-weight: bold;
   position: relative;
@@ -43,10 +44,10 @@
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   /* Key cap effect */
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.5),
-    inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 3px 3px rgba(0,0,0,0.3),
-    0 4px 0 #bebebe;
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    inset 0 -1px 0 rgba(0,0,0,0.4),
+    0 3px 3px rgba(0,0,0,0.5),
+    0 4px 0 #111;
   user-select: none;
   overflow: hidden;
 }
@@ -59,7 +60,7 @@
   left: -30%;
   width: 60%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
   transform: skewX(45deg);
   transition: all 0.3s ease;
   pointer-events: none;
@@ -76,38 +77,43 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 5px;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+  border-radius: 7px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
   pointer-events: none;
 }
 
 .key:active, .key.active {
   transform: translateY(3px);
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.3),
-    inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 1px 2px rgba(0,0,0,0.2),
-    0 1px 0 #bebebe;
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    inset 0 -1px 0 rgba(0,0,0,0.4),
+    0 1px 1px rgba(0,0,0,0.3),
+    0 1px 0 #111;
 }
 
-/* Orange Key (3D Toggle) */
+/* Orange Key (Brain Mode Toggle) */
 .orange-key {
   grid-area: orange;
-  background: linear-gradient(to bottom, #ff9966, #ff7b52);
+  background: linear-gradient(145deg, #ff7b52, #e05a2b);
   color: white;
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.3),
-    inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 3px 3px rgba(0,0,0,0.3),
-    0 4px 0 #d45e3b;
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    0 3px 3px rgba(0,0,0,0.5),
+    0 4px 0 rgb(150, 46, 20);
 }
 
 .orange-key:active {
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.3),
-    inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 1px 2px rgba(0,0,0,0.2),
-    0 1px 0 #d45e3b;
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    0 1px 1px rgba(0,0,0,0.3),
+    0 1px 0 rgb(150, 46, 20);
+}
+
+.key-icon {
+  font-size: 20px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 /* X Key */
@@ -130,15 +136,17 @@
   grid-area: hand;
 }
 
-/* 3D Mode Styles for the keyboard specifically */
+/* Mode-3D Styles for the keyboard */
 .mode-3d .mechanical-keyboard {
   transform-style: preserve-3d;
-  transform: perspective(800px) rotateX(10deg);
+  transform: perspective(800px) rotateX(15deg);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.6),
-    0 10px 20px rgba(0, 0, 0, 0.4),
-    0 5px 10px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(60, 60, 60, 0.8);
+    0 20px 40px rgba(0, 0, 0, 0.8),
+    0 10px 20px rgba(139, 92, 246, 0.1),
+    0 0 120px rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  background-color: rgba(21, 21, 21, 0.9);
+  backdrop-filter: blur(5px);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -147,61 +155,79 @@
   transform: translateZ(5px);
   transition: all 0.3s ease-out;
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.3),
-    inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 5px 15px rgba(0, 0, 0, 0.3),
-    0 10px 20px rgba(0, 0, 0, 0.2),
-    0 0 30px rgba(0, 0, 0, 0.1);
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    0 5px 15px rgba(0, 0, 0, 0.4),
+    0 15px 25px rgba(0, 0, 0, 0.2),
+    0 0 40px rgba(139, 92, 246, 0.1);
 }
 
 .mode-3d .key:hover {
   transform: translateZ(10px) scale(1.05);
-  background-color: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(145deg, #282828, #2a2a2a);
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.6),
-    inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 8px 16px rgba(0, 0, 0, 0.2),
-    0 4px 0 #bebebe,
-    0 0 20px rgba(255, 255, 255, 0.4);
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    0 4px 0 #111,
+    0 0 30px rgba(139, 92, 246, 0.2);
 }
 
 .mode-3d .key:active {
   transform: translateZ(5px) translateY(3px);
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.3),
-    inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 2px 4px rgba(0, 0, 0, 0.3),
-    0 1px 0 #bebebe;
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 1px 0 #111;
 }
 
 .mode-3d .orange-key {
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.3),
-    inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 5px 15px rgba(255, 123, 82, 0.7),
-    0 10px 20px rgba(255, 123, 82, 0.3),
-    0 0 40px rgba(255, 123, 82, 0.2);
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    0 5px 15px rgba(255, 123, 82, 0.3),
+    0 15px 25px rgba(255, 123, 82, 0.1),
+    0 0 60px rgba(255, 123, 82, 0.2);
+}
+
+.mode-3d .mechanical-keyboard::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60px;
+  background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0) 70%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Key press animation */
+@keyframes keyPress {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(4px) scale(0.97);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.key:active {
+  animation: keyPress 0.15s ease-in-out;
 }
 
 /* Key legends styling */
 .key svg {
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.4));
+  color: #ddd;
 }
 
 .mode-3d .key svg {
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
-}
-
-/* 3D light effects */
-.mode-3d .mechanical-keyboard::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 40px;
-  background: radial-gradient(ellipse at center, rgba(255, 123, 82, 0.3) 0%, rgba(255, 123, 82, 0) 70%);
-  pointer-events: none;
-  opacity: 0.7;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.5));
+  color: #fff;
 }
