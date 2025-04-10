@@ -5,6 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --rotation-x: 0deg;
+  --rotation-y: 0deg;
+}
+
 body {
   @apply bg-background text-foreground font-mono;
   background-image: 
@@ -12,10 +17,18 @@ body {
     repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(81, 127, 164, 0.1) 50px, rgba(81, 127, 164, 0.1) 51px),
     repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(81, 127, 164, 0.1) 50px, rgba(81, 127, 164, 0.1) 51px);
   transition: all 0.5s ease-out;
+  overflow-x: hidden;
 }
 
 .skill-bar {
   @apply h-2 rounded-full bg-gradient-to-r from-accent to-foreground;
+}
+
+/* 3D Transformation for the entire page */
+.mode-3d #root {
+  transform: perspective(1200px) rotateX(var(--rotation-x)) rotateY(var(--rotation-y));
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
 }
 
 /* Transition to 3D mode */
@@ -43,6 +56,7 @@ body {
   background-color: rgba(30, 30, 47, 0.5);
   border: 1px solid rgba(139, 92, 246, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+  transform: translateZ(20px);
 }
 
 .mode-3d .experience-card:hover,
@@ -51,4 +65,26 @@ body {
   box-shadow: 
     0 10px 25px rgba(0, 0, 0, 0.1),
     0 0 40px rgba(139, 92, 246, 0.1);
+  transform: translateZ(40px);
+}
+
+.mode-3d header {
+  transform: translateZ(30px);
+}
+
+/* Stellar background */
+.mode-3d::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(2px 2px at calc(random(100) * 1vw) calc(random(100) * 1vh), 
+                      rgba(255, 255, 255, 0.8), transparent),
+                    radial-gradient(1px 1px at calc(random(100) * 1vw) calc(random(100) * 1vh), 
+                      rgba(255, 255, 255, 0.8), transparent);
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: -1;
 }

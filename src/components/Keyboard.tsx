@@ -92,7 +92,7 @@ const Keyboard = () => {
   return (
     <div className="keyboard-container mb-6 select-none">
       <div className="mechanical-keyboard">
-        {/* Orange Key (3D Toggle) */}
+        {/* Orange Key (Universe Toggle) */}
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>

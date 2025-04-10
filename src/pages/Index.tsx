@@ -11,17 +11,17 @@ import BlackHole from "../components/BlackHole";
 
 const Index = () => {
   return (
-    <div className="min-h-screen py-4 px-4 max-w-6xl mx-auto">
+    <div className="min-h-screen py-4 px-4 max-w-6xl mx-auto relative z-10">
       <BlackHole />
       <NeuralParticles />
       <FloatingCode />
       <ThoughtBubbles />
       
-      <div className="grid md:grid-cols-[1fr,2fr] gap-4">
+      <div className="grid md:grid-cols-[1fr,2fr] gap-4 relative z-20">
         <div className="space-y-6">
           <Header />
           <Keyboard />
-          <section>
+          <section className="p-4 rounded-lg bg-card backdrop-blur-sm border border-accent/10">
             <h2 className="text-xl font-semibold text-white mb-3">Technical Expertise</h2>
             <div className="grid grid-cols-1 gap-y-1.5">
               <SkillBar name="Infrastructure as Code" level="Expert" />
@@ -41,7 +41,7 @@ const Index = () => {
           </section>
         </div>
         
-        <section>
+        <section className="p-4 rounded-lg bg-card backdrop-blur-sm border border-accent/10">
           <h2 className="text-xl font-semibold text-white mb-3">Professional Experience</h2>
           <div className="space-y-4">
             <Experience
