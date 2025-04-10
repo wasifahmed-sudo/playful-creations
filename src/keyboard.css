@@ -1,0 +1,91 @@
+/* src/keyboard.css */
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  padding: 20px;
+  background-color: var(--keyboard-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--key-bg);
+  color: var(--key-text);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.key:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Orange Key (Mode Toggle) */
+.key.orange {
+  background-color: var(--orange-key-bg);
+  color: var(--orange-key-text);
+}
+
+/* Coffee Cup Key */
+.key.coffee {
+  background-color: var(--coffee-key-bg);
+  color: var(--coffee-key-text);
+  font-size: 24px;
+}
+
+/* Sound Effect */
+.key.active::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  opacity: 0;
+  animation: tap 0.1s ease-out;
+}
+
+@keyframes tap {
+  to {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+}
+
+/* CSS Variables for Theming */
+:root {
+  --keyboard-bg: #f0f0f0;
+  --key-bg: #ffffff;
+  --key-text: #333333;
+  --orange-key-bg: #ffa500;
+  --orange-key-text: #ffffff;
+  --coffee-key-bg: #333333;
+  --coffee-key-text: #ffffff;
+}
+
+[data-theme='dark'] {
+  --keyboard-bg: #333333;
+  --key-bg: #444444;
+  --key-text: #ffffff;
+  --orange-key-bg: #cc8400;
+  --orange-key-text: #ffffff;
+  --coffee-key-bg: #ffffff;
+  --coffee-key-text: #333333;
+}
+
+/* Minimalistic UI Changes */
+body {
+  background-color: var(--keyboard-bg);
+  transition: background-color 0.3s ease;
+}
