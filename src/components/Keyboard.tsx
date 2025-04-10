@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Mail, X, Hand } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import useSound from 'use-sound';
 
 const Keyboard = () => {
   const [is3DMode, setIs3DMode] = useState(false);
-  const { toast } = useToast();
+  const { toast: uiToast } = useToast();
   
   // Use higher volume for the key sound
   const [playKeySound] = useSound('/key-press.mp3', { volume: 0.8 });
@@ -19,9 +20,9 @@ const Keyboard = () => {
   const handleEmailClick = () => {
     handleKeyClick();
     navigator.clipboard.writeText("syedwasifahmed@protonmail.com");
-    toast({
-      description: "Email address copied to clipboard",
-      duration: 2000,
+    toast("Email copied to clipboard", {
+      description: "syedwasifahmed@protonmail.com",
+      position: "bottom-right",
     });
   };
 
@@ -36,16 +37,24 @@ const Keyboard = () => {
     
     if (!is3DMode) {
       document.documentElement.classList.add('mode-3d');
-      toast({
-        title: "3D Mode Activated!",
-        description: "Experience the portfolio in immersive 3D",
-        duration: 3000,
+      // Activate neural particles
+      document.dispatchEvent(new CustomEvent('activate-neural-particles'));
+      
+      toast("3D Brain Mode Activated", {
+        description: "Welcome to the visual cortex of a developer's mind",
+        position: "top-center",
+        duration: 4000,
+        icon: "🧠",
+        style: { background: "rgba(30, 30, 50, 0.9)", border: "1px solid #8B5CF6" },
       });
     } else {
       document.documentElement.classList.remove('mode-3d');
-      toast({
-        title: "2D Mode Restored",
-        description: "Back to standard view",
+      // Deactivate neural particles
+      document.dispatchEvent(new CustomEvent('deactivate-neural-particles'));
+      
+      toast("2D Mode Restored", {
+        description: "Returning to normal perception",
+        position: "top-center",
         duration: 2000,
       });
     }
@@ -64,9 +73,9 @@ const Keyboard = () => {
       const xRatio = clientX / window.innerWidth;
       const yRatio = clientY / window.innerHeight;
       
-      // Map mouse position to rotation values (adjust range as needed)
-      const rotX = 5 - (yRatio * 10); // -5 to +5 degrees
-      const rotY = -5 + (xRatio * 10); // -5 to +5 degrees
+      // Map mouse position to rotation values (enhance effect)
+      const rotX = 8 - (yRatio * 16); // -8 to +8 degrees
+      const rotY = -8 + (xRatio * 16); // -8 to +8 degrees
       
       document.documentElement.style.setProperty('--rotation-x', `${rotX}deg`);
       document.documentElement.style.setProperty('--rotation-y', `${rotY}deg`);
@@ -91,7 +100,7 @@ const Keyboard = () => {
               </button>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Toggle 3D Mode</p>
+              <p>Toggle Developer Brain 3D Mode</p>
             </TooltipContent>
           </Tooltip>
 

@@ -1,12 +1,20 @@
+
 import Header from "../components/Header";
 import SkillBar from "../components/SkillBar";
 import Experience from "../components/Experience";
 import React, { useState } from 'react';
 import Keyboard from "../components/Keyboard";
+import NeuralParticles from "../components/NeuralParticles";
+import FloatingCode from "../components/FloatingCode";
+import ThoughtBubbles from "../components/ThoughtBubbles";
 
 const Index = () => {
   return (
     <div className="min-h-screen py-4 px-4 max-w-6xl mx-auto">
+      <NeuralParticles />
+      <FloatingCode />
+      <ThoughtBubbles />
+      
       <div className="grid md:grid-cols-[1fr,2fr] gap-4">
         <div className="space-y-6">
           <Header />

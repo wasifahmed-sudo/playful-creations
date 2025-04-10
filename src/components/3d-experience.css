@@ -182,3 +182,99 @@
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   transform: translateZ(5px);
 }
+
+/* Floating code animations */
+@keyframes float-slow {
+  0% {
+    transform: translateZ(20px) translate(0, 0);
+  }
+  50% {
+    transform: translateZ(30px) translate(-10px, 15px);
+  }
+  100% {
+    transform: translateZ(20px) translate(0, 0);
+  }
+}
+
+@keyframes float-delayed {
+  0% {
+    transform: translateZ(25px) translate(0, 0);
+  }
+  50% {
+    transform: translateZ(35px) translate(15px, -10px);
+  }
+  100% {
+    transform: translateZ(25px) translate(0, 0);
+  }
+}
+
+@keyframes float-delayed-slow {
+  0% {
+    transform: translateZ(15px) translate(0, 0);
+  }
+  50% {
+    transform: translateZ(25px) translate(10px, 10px);
+  }
+  100% {
+    transform: translateZ(15px) translate(0, 0);
+  }
+}
+
+@keyframes float-reverse {
+  0% {
+    transform: translateZ(20px) translate(0, 0);
+  }
+  50% {
+    transform: translateZ(30px) translate(10px, -15px);
+  }
+  100% {
+    transform: translateZ(20px) translate(0, 0);
+  }
+}
+
+.animate-float {
+  animation: float-slow 10s infinite ease-in-out;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 12s infinite ease-in-out;
+}
+
+.animate-float-slow {
+  animation: float-slow 15s infinite ease-in-out;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s infinite ease-in-out;
+}
+
+.animate-float-delayed-slow {
+  animation: float-delayed-slow 18s infinite ease-in-out;
+}
+
+/* Glow effects */
+.shadow-glow {
+  box-shadow: 
+    0 0 20px rgba(139, 92, 246, 0.2),
+    0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.mode-3d .mechanical-keyboard {
+  transform: translateZ(50px) !important;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 10px 30px rgba(255, 123, 82, 0.2) !important;
+}
+
+/* Matrix-like code rain effect */
+.mode-3d .code-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}

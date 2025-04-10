@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -10,8 +11,44 @@ body {
     linear-gradient(rgba(26, 31, 44, 0.97), rgba(26, 31, 44, 0.97)),
     repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(81, 127, 164, 0.1) 50px, rgba(81, 127, 164, 0.1) 51px),
     repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(81, 127, 164, 0.1) 50px, rgba(81, 127, 164, 0.1) 51px);
+  transition: all 0.5s ease-out;
 }
 
 .skill-bar {
   @apply h-2 rounded-full bg-gradient-to-r from-accent to-foreground;
+}
+
+/* Transition to 3D mode */
+.mode-3d body {
+  background-image: 
+    linear-gradient(rgba(20, 21, 35, 0.97), rgba(20, 21, 35, 0.97)),
+    repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(139, 92, 246, 0.05) 50px, rgba(139, 92, 246, 0.05) 51px),
+    repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(139, 92, 246, 0.05) 50px, rgba(139, 92, 246, 0.05) 51px);
+  transition: all 0.5s ease-out;
+}
+
+/* Matrix code rain effect */
+@keyframes rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.mode-3d .experience-card,
+.mode-3d section {
+  backdrop-filter: blur(8px);
+  background-color: rgba(30, 30, 47, 0.5);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+}
+
+.mode-3d .experience-card:hover,
+.mode-3d section:hover {
+  background-color: rgba(30, 30, 47, 0.7);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.1),
+    0 0 40px rgba(139, 92, 246, 0.1);
 }
