@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Coffee, Github, Mail, X, Hand } from "lucide-react";
+import { Github, Mail, X, Hand } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import useSound from 'use-sound';
@@ -9,7 +9,8 @@ const Keyboard = () => {
   const [is3DMode, setIs3DMode] = useState(false);
   const { toast } = useToast();
   
-  const [playKeySound] = useSound('/key-press.mp3', { volume: 0.5 });
+  // Use higher volume for the key sound
+  const [playKeySound] = useSound('/key-press.mp3', { volume: 0.8 });
   
   const handleKeyClick = () => {
     playKeySound();
@@ -50,9 +51,13 @@ const Keyboard = () => {
     }
   };
 
-  // Create a mouse movement effect when in 3D mode
+  // Create a parallax effect when in 3D mode
   useEffect(() => {
-    if (!is3DMode) return;
+    if (!is3DMode) {
+      document.documentElement.style.removeProperty('--rotation-x');
+      document.documentElement.style.removeProperty('--rotation-y');
+      return;
+    }
     
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
@@ -77,20 +82,8 @@ const Keyboard = () => {
   return (
     <div className="keyboard-container mb-6 select-none">
       <div className="mechanical-keyboard">
-        {/* Coffee Key */}
+        {/* Orange Key (3D Toggle) */}
         <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button onClick={handleKeyClick} className="key coffee-key">
-                <Coffee size={18} />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Coffee Break</p>
-            </TooltipContent>
-          </Tooltip>
-
-          {/* Orange Key (3D Toggle) */}
           <Tooltip>
             <TooltipTrigger asChild>
               <button onClick={handleToggle3D} className="key orange-key">
@@ -123,6 +116,18 @@ const Keyboard = () => {
             </TooltipTrigger>
             <TooltipContent>
               <p>View GitHub</p>
+            </TooltipContent>
+          </Tooltip>
+
+          {/* Mail Key */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button onClick={handleEmailClick} className="key mail-key">
+                <Mail size={18} />
+              </button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Copy Email</p>
             </TooltipContent>
           </Tooltip>
 

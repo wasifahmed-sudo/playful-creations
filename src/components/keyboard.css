@@ -12,39 +12,61 @@
 .mechanical-keyboard {
   display: grid;
   grid-template-areas:
-    "coffee coffee coffee"
     "orange key-x github"
     "mail   hand  hand";
   grid-template-columns: 60px 60px 60px;
-  grid-gap: 5px;
-  background-color: #252525;
-  padding: 10px;
+  grid-gap: 8px;
+  background-color: #1a1a1a;
+  padding: 12px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.6),
+    0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 }
 
 /* Base Key Style */
 .key {
-  height: 40px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e0e0de;
+  background-color: #e8e8e8;
   color: #333;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
   font-weight: bold;
   position: relative;
   cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.1s;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   /* Key cap effect */
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.5),
     inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 2px 3px rgba(0,0,0,0.3),
+    0 3px 3px rgba(0,0,0,0.3),
     0 4px 0 #bebebe;
   user-select: none;
+  overflow: hidden;
+}
+
+/* Key shine effect */
+.key::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 60%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(45deg);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.key:hover::before {
+  left: 120%;
 }
 
 .key::after {
@@ -54,51 +76,29 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
   pointer-events: none;
 }
 
 .key:active, .key.active {
-  transform: translateY(2px);
+  transform: translateY(3px);
   box-shadow: 
     inset 0 1px 0 rgba(255,255,255,0.3),
     inset 0 -1px 0 rgba(0,0,0,0.2),
     0 1px 2px rgba(0,0,0,0.2),
-    0 2px 0 #bebebe;
-}
-
-/* Coffee Key */
-.coffee-key {
-  grid-area: coffee;
-  background-color: #2a2a2a;
-  color: white;
-  border-radius: 6px;
-  height: 30px;
-  box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.1),
-    inset 0 -1px 0 rgba(0,0,0,0.4),
-    0 2px 3px rgba(0,0,0,0.3),
-    0 3px 0 #1a1a1a;
-}
-
-.coffee-key:active {
-  box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.1),
-    inset 0 -1px 0 rgba(0,0,0,0.4),
-    0 1px 1px rgba(0,0,0,0.3),
-    0 1px 0 #1a1a1a;
+    0 1px 0 #bebebe;
 }
 
 /* Orange Key (3D Toggle) */
 .orange-key {
   grid-area: orange;
-  background-color: #ff7b52;
+  background: linear-gradient(to bottom, #ff9966, #ff7b52);
   color: white;
   box-shadow: 
     inset 0 1px 0 rgba(255,255,255,0.3),
     inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 2px 3px rgba(0,0,0,0.3),
+    0 3px 3px rgba(0,0,0,0.3),
     0 4px 0 #d45e3b;
 }
 
@@ -107,7 +107,7 @@
     inset 0 1px 0 rgba(255,255,255,0.3),
     inset 0 -1px 0 rgba(0,0,0,0.2),
     0 1px 2px rgba(0,0,0,0.2),
-    0 2px 0 #d45e3b;
+    0 1px 0 #d45e3b;
 }
 
 /* X Key */
@@ -121,7 +121,7 @@
 }
 
 /* Mail Key */
-.key:nth-child(4) {
+.mail-key {
   grid-area: mail;
 }
 
@@ -134,37 +134,53 @@
 .mode-3d .mechanical-keyboard {
   transform-style: preserve-3d;
   transform: perspective(800px) rotateX(10deg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 10px 20px rgba(0, 0, 0, 0.4),
+    0 5px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(60, 60, 60, 0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .mode-3d .key {
   transform-style: preserve-3d;
   transform: translateZ(5px);
-  transition: all 0.2s ease-out;
+  transition: all 0.3s ease-out;
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -1px 0 rgba(0,0,0,0.2),
+    0 5px 15px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .mode-3d .key:hover {
   transform: translateZ(10px) scale(1.05);
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -1px 0 rgba(0,0,0,0.2),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 4px 0 #bebebe,
+    0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .mode-3d .key:active {
-  transform: translateZ(3px) translateY(2px);
-}
-
-.mode-3d .coffee-key {
+  transform: translateZ(5px) translateY(3px);
   box-shadow: 
-    inset 0 1px 0 rgba(255,255,255,0.1),
-    inset 0 -1px 0 rgba(0,0,0,0.4),
-    0 5px 10px rgba(0,0,0,0.5),
-    0 10px 20px rgba(0,0,0,0.2);
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -1px 0 rgba(0,0,0,0.2),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 1px 0 #bebebe;
 }
 
 .mode-3d .orange-key {
   box-shadow: 
     inset 0 1px 0 rgba(255,255,255,0.3),
     inset 0 -1px 0 rgba(0,0,0,0.2),
-    0 5px 15px rgba(255, 123, 82, 0.4),
-    0 10px 20px rgba(0,0,0,0.2);
+    0 5px 15px rgba(255, 123, 82, 0.7),
+    0 10px 20px rgba(255, 123, 82, 0.3),
+    0 0 40px rgba(255, 123, 82, 0.2);
 }
 
 /* Key legends styling */
@@ -174,4 +190,18 @@
 
 .mode-3d .key svg {
   filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+/* 3D light effects */
+.mode-3d .mechanical-keyboard::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(255, 123, 82, 0.3) 0%, rgba(255, 123, 82, 0) 70%);
+  pointer-events: none;
+  opacity: 0.7;
 }
