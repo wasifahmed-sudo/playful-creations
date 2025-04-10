@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -22,6 +23,16 @@ export default {
       },
       backgroundImage: {
         "grid-pattern": "linear-gradient(to right, #243949 0%, #517fa4 100%)",
+      },
+      animation: {
+        "spin-slow": "spin 8s linear infinite",
+        "pulse-glow": "pulse-glow 4s ease-in-out infinite alternate",
+      },
+      keyframes: {
+        "pulse-glow": {
+          "0%": { boxShadow: "0 0 20px 5px rgba(139, 92, 246, 0.4)" },
+          "100%": { boxShadow: "0 0 40px 20px rgba(139, 92, 246, 0.7)" },
+        },
       },
     },
   },

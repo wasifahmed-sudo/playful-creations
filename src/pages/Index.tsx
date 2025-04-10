@@ -7,10 +7,12 @@ import Keyboard from "../components/Keyboard";
 import NeuralParticles from "../components/NeuralParticles";
 import FloatingCode from "../components/FloatingCode";
 import ThoughtBubbles from "../components/ThoughtBubbles";
+import BlackHole from "../components/BlackHole";
 
 const Index = () => {
   return (
     <div className="min-h-screen py-4 px-4 max-w-6xl mx-auto">
+      <BlackHole />
       <NeuralParticles />
       <FloatingCode />
       <ThoughtBubbles />

@@ -37,23 +37,24 @@ const Keyboard = () => {
     
     if (!is3DMode) {
       document.documentElement.classList.add('mode-3d');
-      // Activate neural particles
+      // Activate neural particles and black hole
       document.dispatchEvent(new CustomEvent('activate-neural-particles'));
+      document.dispatchEvent(new CustomEvent('activate-black-hole'));
       
-      toast("Brain Mode Activated", {
-        description: "Welcome to the visual cortex of a developer's mind",
+      toast("Singularity Activated", {
+        description: "Entering the computational event horizon",
         position: "top-center",
         duration: 4000,
-        icon: "🧠",
-        style: { background: "rgba(30, 30, 50, 0.9)", border: "1px solid #8B5CF6" },
+        style: { background: "rgba(20, 20, 35, 0.9)", border: "1px solid #8B5CF6" },
       });
     } else {
       document.documentElement.classList.remove('mode-3d');
-      // Deactivate neural particles
+      // Deactivate neural particles and black hole
       document.dispatchEvent(new CustomEvent('deactivate-neural-particles'));
+      document.dispatchEvent(new CustomEvent('deactivate-black-hole'));
       
       toast("Standard Mode Restored", {
-        description: "Returning to normal perception",
+        description: "Returning to normal space-time",
         position: "top-center",
         duration: 2000,
       });
@@ -95,12 +96,10 @@ const Keyboard = () => {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <button onClick={handleToggle3D} className="key orange-key">
-                <span className="key-icon">🧠</span>
-              </button>
+              <button onClick={handleToggle3D} className="key orange-key" />
             </TooltipTrigger>
             <TooltipContent>
-              <p>Toggle Developer Brain Mode</p>
+              <p>Toggle Singularity</p>
             </TooltipContent>
           </Tooltip>
 
