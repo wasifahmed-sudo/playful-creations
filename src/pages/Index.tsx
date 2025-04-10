@@ -2,8 +2,20 @@
 import Header from "../components/Header";
 import SkillBar from "../components/SkillBar";
 import Experience from "../components/Experience";
+import React from 'react';
 
 const Index = () => {
+  const toggleTheme = () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+  }
+
+  const handleKeyPress = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.classList.add('active')
+    setTimeout(()=>e.currentTarget.classList.remove('active'),100)
+  }
+
   return (
     <div className="min-h-screen py-4 px-4 max-w-6xl mx-auto">
       <div className="grid md:grid-cols-[1fr,2fr] gap-4">
@@ -71,6 +83,23 @@ const Index = () => {
           </div>
         </section>
       </div>
+
+      {/* Keyboard Section */}
+      <div className="keyboard mt-8">
+        <button className="key coffee" onClick={handleKeyPress}>☕</button>
+        <button className="key orange" onClick={() => {
+          toggleTheme()
+          handleKeyPress(event as any)
+        }}>
+        </button>
+        <button className="key" onClick={handleKeyPress}>X</button>
+        <button className="key" onClick={handleKeyPress}>Y</button>
+        <button className="key" onClick={handleKeyPress}>Z</button>
+        <button className="key" onClick={handleKeyPress}>A</button>
+      </div>
+      {/* End Keyboard Section */}
+
+
     </div>
   );
 };
