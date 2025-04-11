@@ -399,11 +399,11 @@ const BlackHole = () => {
       {/* Code fragments floating in */}
       {renderCodeFragments()}
       
-      {/* Vignette overlay when active */}
+      {/* Vignette overlay when active - REDUCED opacity significantly */}
       <div 
         className="fixed inset-0 pointer-events-none z-20 transition-opacity duration-1000"
         style={{
-          background: `radial-gradient(circle at 50% 50%, transparent 20%, rgba(0, 0, 0, ${active ? 0.7 : 0}) 70%)`,
+          background: `radial-gradient(circle at 50% 50%, transparent 20%, rgba(0, 0, 0, ${active ? 0.4 : 0}) 70%)`,
           opacity: active ? 1 : 0
         }}
       />

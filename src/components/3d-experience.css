@@ -210,14 +210,14 @@
   }
 }
 
-/* Glow effects */
+/* Shadow and glow effects */
 .shadow-glow {
   box-shadow: 
     0 0 20px rgba(139, 92, 246, 0.3),
     0 0 40px rgba(139, 92, 246, 0.1);
 }
 
-/* Advanced neon light effect for skills section */
+/* Neon light effect for skills section */
 .mode-3d .skill-bar {
   position: relative;
 }
@@ -235,77 +235,15 @@
   opacity: 0.7;
 }
 
-/* Syntax highlighting for code snippets */
-.syntax-highlighted {
-  color: #e1e1e6;
-}
-
-.syntax-highlighted .keyword {
-  color: #ff7b52;
-}
-
-.syntax-highlighted .string {
-  color: #9ece6a;
-}
-
-.syntax-highlighted .comment {
-  color: #565f89;
-  font-style: italic;
-}
-
-.syntax-highlighted .function {
-  color: #7aa2f7;
-}
-
-.syntax-highlighted .variable {
-  color: #bb9af7;
-}
-
-/* Responsive scaling for 3D effects */
-@media (max-width: 768px) {
-  .mode-3d {
-    perspective: 1200px;
-  }
-  
-  .mode-3d section,
-  .mode-3d .experience-card {
-    transform: translateZ(15px);
-  }
-  
-  .mode-3d section:hover,
-  .mode-3d .experience-card:hover {
-    transform: translateZ(25px) scale(1.01);
-  }
-}
-
-/* Neuron connection lines */
-.neuron-connection {
-  position: absolute;
-  pointer-events: none;
-  background: linear-gradient(90deg, 
-    rgba(139, 92, 246, 0.7) 0%, 
-    rgba(255, 123, 82, 0.7) 100%);
-  height: 1px;
-  transform-origin: left center;
-  opacity: 0.5;
-  filter: blur(1px);
-  z-index: 15;
-}
-
-/* Add depth to the page */
+/* Add depth to the page with subtle lighting effect */
 .mode-3d:after {
   content: '';
   position: fixed;
   inset: 0;
   background: 
-    radial-gradient(ellipse at top left, transparent 0%, rgba(0, 0, 0, 0.3) 90%),
-    radial-gradient(ellipse at bottom right, transparent 0%, rgba(0, 0, 0, 0.3) 90%);
+    radial-gradient(ellipse at top left, transparent 0%, rgba(0, 0, 0, 0.2) 90%),
+    radial-gradient(ellipse at bottom right, transparent 0%, rgba(0, 0, 0, 0.2) 90%);
   pointer-events: none;
   z-index: 100;
-  opacity: 0.4;
-}
-
-/* Advanced hover effects for elements */
-.mode-3d *:hover {
-  z-index: 5;
+  opacity: 0.3;
 }
