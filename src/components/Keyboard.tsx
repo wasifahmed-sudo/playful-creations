@@ -33,30 +33,48 @@ const Keyboard = () => {
 
   const handleToggle3D = () => {
     handleKeyClick();
-    setIs3DMode(!is3DMode);
     
-    if (!is3DMode) {
-      document.documentElement.classList.add('mode-3d');
-      // Activate neural particles and black hole
-      document.dispatchEvent(new CustomEvent('activate-neural-particles'));
-      document.dispatchEvent(new CustomEvent('activate-black-hole'));
-      
-      toast("Singularity Activated", {
-        description: "Entering the computational event horizon",
+    // Toggle the 3D mode state
+    const newMode = !is3DMode;
+    setIs3DMode(newMode);
+    
+    try {
+      // Add or remove the mode-3d class to the document
+      if (newMode) {
+        document.documentElement.classList.add('mode-3d');
+        
+        // Fire custom events in a safe way
+        setTimeout(() => {
+          document.dispatchEvent(new CustomEvent('activate-neural-particles'));
+          document.dispatchEvent(new CustomEvent('activate-black-hole'));
+          
+          toast("Singularity Activated", {
+            description: "Entering the computational event horizon",
+            position: "top-center",
+            duration: 4000,
+            style: { background: "rgba(20, 20, 35, 0.9)", border: "1px solid #8B5CF6" },
+          });
+        }, 300);
+      } else {
+        document.documentElement.classList.remove('mode-3d');
+        
+        // Deactivate effects safely
+        setTimeout(() => {
+          document.dispatchEvent(new CustomEvent('deactivate-neural-particles'));
+          document.dispatchEvent(new CustomEvent('deactivate-black-hole'));
+          
+          toast("Standard Mode Restored", {
+            description: "Returning to normal space-time",
+            position: "top-center",
+            duration: 2000,
+          });
+        }, 300);
+      }
+    } catch (error) {
+      console.error("Error toggling 3D mode:", error);
+      toast("An error occurred", {
+        description: "There was a problem toggling the visual effect",
         position: "top-center",
-        duration: 4000,
-        style: { background: "rgba(20, 20, 35, 0.9)", border: "1px solid #8B5CF6" },
-      });
-    } else {
-      document.documentElement.classList.remove('mode-3d');
-      // Deactivate neural particles and black hole
-      document.dispatchEvent(new CustomEvent('deactivate-neural-particles'));
-      document.dispatchEvent(new CustomEvent('deactivate-black-hole'));
-      
-      toast("Standard Mode Restored", {
-        description: "Returning to normal space-time",
-        position: "top-center",
-        duration: 2000,
       });
     }
   };
@@ -66,7 +84,7 @@ const Keyboard = () => {
     if (!is3DMode) {
       document.documentElement.style.removeProperty('--rotation-x');
       document.documentElement.style.removeProperty('--rotation-y');
-      return;
+      return () => {};
     }
     
     const handleMouseMove = (e) => {
@@ -96,7 +114,10 @@ const Keyboard = () => {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <button onClick={handleToggle3D} className="key orange-key" />
+              <button 
+                onClick={handleToggle3D} 
+                className={`key orange-key ${is3DMode ? 'active' : ''}`} 
+              />
             </TooltipTrigger>
             <TooltipContent>
               <p>Toggle Singularity</p>
