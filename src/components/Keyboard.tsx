@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { Github, Mail, X, Hand } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { toast } from "sonner";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import useSound from 'use-sound';
 
 const Keyboard = () => {
@@ -92,7 +92,7 @@ const Keyboard = () => {
   return (
     <div className="keyboard-container mb-6 select-none">
       <div className="mechanical-keyboard">
-        {/* Orange Key (Universe Toggle) */}
+        {/* Toggle Singularity Key */}
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -100,18 +100,6 @@ const Keyboard = () => {
             </TooltipTrigger>
             <TooltipContent>
               <p>Toggle Singularity</p>
-            </TooltipContent>
-          </Tooltip>
-
-          {/* X Key */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button onClick={handleKeyClick} className="key key-x">
-                <X size={18} />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Close</p>
             </TooltipContent>
           </Tooltip>
 
@@ -136,18 +124,6 @@ const Keyboard = () => {
             </TooltipTrigger>
             <TooltipContent>
               <p>Copy Email</p>
-            </TooltipContent>
-          </Tooltip>
-
-          {/* Hand/cursor Key */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button onClick={handleKeyClick} className="key spacebar">
-                <Hand size={18} />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Interact</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

@@ -86,8 +86,10 @@ const BlackHole = () => {
     // Add the attractor to the world
     World.add(engine.world, [attractor]);
     
-    // Start the engine
-    Engine.run(engine);
+    // Start the engine using Runner instead of Engine.run as per warning
+    const Runner = Matter.Runner;
+    const runner = Runner.create();
+    Runner.run(runner, engine);
     Render.run(render);
     
     // Adjust for window resize
@@ -119,6 +121,7 @@ const BlackHole = () => {
       Render.stop(render);
       World.clear(engine.world);
       Engine.clear(engine);
+      Runner.stop(runner);
       render.canvas.remove();
       render.textures = {};
     };
