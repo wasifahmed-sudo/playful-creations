@@ -1,13 +1,13 @@
 
 // Common types used by BlackHole components
-import Matter from 'matter-js';
+import * as MatterJS from 'matter-js';
 
 export interface ParticleRef {
-  current: Matter.Body[];
+  current: MatterJS.Body[];
 }
 
 export interface EngineRef {
-  current: Matter.Engine | null;
+  current: MatterJS.Engine | null;
 }
 
 export interface BlackHoleState {

@@ -5,6 +5,7 @@ import Singularity from './Singularity';
 import Vignette from './Vignette';
 import CodeFragmentsContainer from './CodeFragmentsContainer';
 import { ParticleRef, EngineRef } from './types';
+import * as Matter from 'matter-js';
 
 const BlackHole: React.FC = () => {
   const [active, setActive] = useState(false);

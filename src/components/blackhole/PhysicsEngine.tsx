@@ -1,6 +1,5 @@
-
 import React, { useRef, useEffect } from 'react';
-import Matter from 'matter-js';
+import * as Matter from 'matter-js';
 import { EngineRef, ParticleRef } from './types';
 
 interface PhysicsEngineProps {

@@ -1,8 +1,22 @@
 
 /// <reference types="vite/client" />
 
-// Add Matter.js type definitions for global use
-declare namespace Matter {
+// Define Matter.js module
+declare module 'matter-js' {
+  // Engine and rendering
+  export const Engine: any;
+  export const Render: any;
+  export const Runner: any;
+  export const World: any;
+  export const Bodies: any;
+  export const Body: any;
+  export const Composite: any;
+  export const Constraint: any;
+  export const Mouse: any;
+  export const MouseConstraint: any;
+  export const Events: any;
+  
+  // Types for our references
   export type Engine = any;
   export type Render = any;
   export type World = any;
@@ -14,8 +28,4 @@ declare namespace Matter {
   export type MouseConstraint = any;
   export type Runner = any;
   export type Events = any;
-}
-
-declare module 'matter-js' {
-  export = Matter;
 }

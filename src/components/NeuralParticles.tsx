@@ -1,7 +1,6 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { useToast } from "@/components/ui/use-toast";
-import Matter from 'matter-js';
+import * as Matter from 'matter-js';
 
 const NeuralParticles = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
