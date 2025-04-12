@@ -1,0 +1,28 @@
+
+/* Base Keyboard Container */
+.keyboard-container {
+  width: 220px;
+  padding: 10px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Mechanical Keyboard Layout */
+.mechanical-keyboard {
+  display: grid;
+  grid-template-areas:
+    "orange github mail";
+  grid-template-columns: repeat(3, 60px);
+  grid-gap: 10px;
+  background-color: #1E1E1E;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.8),
+    0 3px 5px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  /* Enhanced top-down perspective */
+  transform: perspective(800px) rotateX(30deg);
+}

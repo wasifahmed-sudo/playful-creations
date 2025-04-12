@@ -1,10 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { Github, Mail } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { toast } from "sonner";
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import useSound from 'use-sound';
+import "./keyboard/index.css";
 
 const Keyboard = () => {
   const [is3DMode, setIs3DMode] = useState(false);

@@ -1,0 +1,26 @@
+
+/* Key press animation */
+@keyframes keyPress {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(4px) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.key:active {
+  animation: keyPress 0.15s ease-in-out;
+}
+
+@keyframes rgb-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
