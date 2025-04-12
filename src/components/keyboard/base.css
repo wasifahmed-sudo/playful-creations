@@ -8,19 +8,17 @@
   justify-content: flex-start;
 }
 
-/* Mechanical Keyboard Layout - flat top-down view */
+/* Mechanical Keyboard Layout - realistic top-down view */
 .mechanical-keyboard {
   display: grid;
   grid-template-areas:
     "orange github mail";
   grid-template-columns: repeat(3, 60px);
-  grid-gap: 10px;
+  grid-gap: 8px;
   background-color: #1E1E1E;
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  /* Remove perspective for plain top view */
   transform: none;
 }
