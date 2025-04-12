@@ -1,3 +1,4 @@
+
 /* src/keyboard.css */
 
 .keyboard {
@@ -22,13 +23,14 @@
   padding: 10px;
   font-size: 18px;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
+  position: relative;
 }
 
 .key:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 /* Orange Key (Mode Toggle) */
@@ -59,7 +61,7 @@
 @keyframes tap {
   to {
     opacity: 1;
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
 }
 

@@ -8,7 +8,7 @@
   justify-content: flex-start;
 }
 
-/* Mechanical Keyboard Layout */
+/* Mechanical Keyboard Layout - flat top-down view */
 .mechanical-keyboard {
   display: grid;
   grid-template-areas:
@@ -19,10 +19,8 @@
   padding: 16px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 5px 15px rgba(0, 0, 0, 0.8),
-    0 3px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  /* Enhanced top-down perspective */
-  transform: perspective(800px) rotateX(30deg);
+  /* Remove perspective for plain top view */
+  transform: none;
 }
